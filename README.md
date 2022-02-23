@@ -1,9 +1,5 @@
 # Mystery Word
 
-## Description
-
-Implement the game of Mystery Word.
-
 ## Objectives
 
 After completing this assignment, you should be able to:
@@ -15,59 +11,76 @@ After completing this assignment, you should be able to:
 
 ## Details
 
-## Normal Mode
+For this lab, you will implement a word-guessing game we call Mystery Word. In your game, the player plays against the computer. This game will run on the command-line as a text-only interactive game.
 
-You will implement the game Mystery Word. In your game, you will be playing
-against the computer.
+### Included files
 
-The computer must select a word at random from the list of words in the file
-`words.txt` from this repository.
+#### `mystery_word.py`
 
-The game must be interactive; the flow of the game should go as follows:
+This is a starter file. Delete the keyword `pass` in the `play_game` function and write your code from there. You do not have to change the code below the line that says `if __name__ == "__main__":`.
 
-1. Let the user choose a level of difficulty at the beginning of the program.
-   Easy mode only has words of 4-6 characters; normal mode only has words of 6-8
-   characters; hard mode only has words of 8+ characters.
+Notice that you are not passing in the file name as an argument on the command line. You should open the file yourself in your code, using its path.
 
-2. At the start of the game, let the user know how many letters the computer's
+#### `words.txt`
+
+This is the source file your game will use to choose the secret word.
+
+#### `test-word.txt`
+
+This is a test file with only ONE word in it, instead of 58,000. It's a lot easier to think about one word while you're developing the game. You can change it if you want.
+
+
+## Minimum Requirements
+
+Your program should run when you run this file like this:
+
+```py
+python mystery_word.py
+```
+
+The computer (that's you, writing this in Python code) must select a word at random from the list of words in the file `words.txt`, provided in this repo. This becomes the secret word for the game.
+
+### Game Flow
+
+1. At the start of the game, let the user know how many letters the secret
    word contains.
 
-3. Ask the user to supply one guess (i.e. letter) per round. This letter can be
-   upper or lower case and it should not matter. If a user enters more than one
-   letter, tell them the input is invalid and let them try again.
+2. Ask the user to supply one guess (i.e. letter) per round. This letter can be upper or lower case and it should not matter. If a user enters more than one letter, tell them the input is invalid and let them try again.
 
-4. Let the user know if their guess appears in the computer's word.
+3. Let the user know if their guess appears in the secret word.
 
-5. Display the partially guessed word, as well as letters that have not been
-   guessed. For example, if the word is BOMBARD and the letters guessed are a, b,
-   and d, the screen should display:
+4. Display the partially guessed word, as well as letters that have not been guessed. For example, if the word is BOMBARD and the letters guessed are `a`, `b`, and `d`, the screen should display:
 
 ```
 B _ _ B A _ D
 ```
 
-A user is allowed 8 guesses. Remind the user of how many guesses they have left
-after each round.
+### Game Rules
 
-_A user loses a guess only when they guess incorrectly._ If they guess a letter
-that is in the computer's word, they do not lose a guess.
+A user is allowed 8 guesses. Remind the user of how many guesses they have left after each round.
 
-If the user guesses the same letter twice, do not take away a guess. Instead,
-print a message letting them know they've already guessed that letter and ask
-them to try again.
+_A user loses a guess only when they guess incorrectly._ If they guess a letter that is in the secret word, they do not lose a guess.
 
-The game should end when the user constructs the full word or runs out of
-guesses. If the player runs out of guesses, reveal the word to the user when
-the game ends.
+If the user guesses the same letter twice, do not take away a guess.
 
-When a game ends, ask the user if they want to play again. The game begins
-again if they reply positively.
+Instead, print a message letting them know they've already guessed that letter and ask them to try again.
 
-## Hard Mode
+The game should end when the user constructs the full word or runs out of guesses.
+
+If the player runs out of guesses, reveal the word to the user when the game ends.
+
+### Once the above is working, implement these features
+
+1. Let the user choose a level of difficulty at the beginning of the game.
+   Easy mode only has words of 4-6 characters; normal mode only has words of 6-8
+   characters; hard mode only has words of 8+ characters.
+2. When a game ends, ask the user if they want to play again. The game begins again with a new secret word if they reply positively.
+
+## 🌶 Spicy Mode
 
 Implement the [evil version of this game](http://nifty.stanford.edu/2011/schwarz-evil-hangman/).
 Put it in a new Python program called "demon_words.py".
 
-## Credit
+### Attribution
 
 This lab is based off a similar exercise in MIT's 6.00.1x course.
