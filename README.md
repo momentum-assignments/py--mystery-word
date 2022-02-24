@@ -42,8 +42,7 @@ The computer (that's you, writing this in Python code) must select a word at ran
 
 ### Game Flow
 
-1. At the start of the game, let the user know how many letters the secret
-   word contains.
+1. At the start of the game, let the user know how many letters the secret word contains.
 
 2. Ask the user to supply one guess (i.e. letter) per round. This letter can be upper or lower case and it should not matter. If a user enters more than one letter, tell them the input is invalid and let them try again.
 
@@ -51,7 +50,7 @@ The computer (that's you, writing this in Python code) must select a word at ran
 
 4. Display the partially guessed word, as well as letters that have not been guessed. For example, if the word is BOMBARD and the letters guessed are `a`, `b`, and `d`, the screen should display:
 
-```
+```txt
 B _ _ B A _ D
 ```
 
@@ -69,12 +68,15 @@ The game should end when the user constructs the full word or runs out of guesse
 
 If the player runs out of guesses, reveal the word to the user when the game ends.
 
-### Once the above is working, implement these features
+### More features
+
+Once the minimum requirements are in place, implement these features. You may not get to these, and that is ok!
 
 1. Let the user choose a level of difficulty at the beginning of the game.
    Easy mode only has words of 4-6 characters; normal mode only has words of 6-8
    characters; hard mode only has words of 8+ characters.
 2. When a game ends, ask the user if they want to play again. The game begins again with a new secret word if they reply positively.
+3. Use pipenv to install the [colorama package](https://github.com/tartley/colorama) to add colors to your terminal output. If you want to get really fancy, check out [asciimatics](https://github.com/peterbrittain/asciimatics)!
 
 ## 🌶 Spicy Mode
 
